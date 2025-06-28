@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+
+  <div class="auth-container">
+    <h2 id="formTitle">Login</h2>
+
+    <!-- Login/Register Form -->
+    <form id="loginForm">
+      <div class="form-group" id="nameGroup" style="display: none;">
+        <label for="signupName">Name</label>
+        <input type="text" id="signupName" placeholder="Your Name" />
+      </div>
+
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="Email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Password" required />
+      </div>
+
+      <button type="button" id="emailLoginBtn">Login</button>
+      <button type="button" id="emailSignupBtn" style="display: none;">Register</button>
+    </form>
+
+    <div class="form-toggle" id="toggleForm">Don't have an account? Register</div>
+
+    <div class="social-buttons">
+      <button id="googleLogin" class="google-button">
+        <ion-icon name="logo-google"></ion-icon> Sign in with Google
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

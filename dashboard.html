@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Buddy | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="dashboard.js" defer></script>
+  <script type="module" src="firebase-config.js"></script>
+  <link href="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- === Header === -->
+  <div class="header">
+    <h1>Sports Buddy</h1>
+    <div class="nav-buttons">
+      <button id="logoutBtn"><ion-icon name="log-out-outline"></ion-icon> Logout</button>
+    </div>
+  </div>
+
+  <!-- === Sports Event Grid === -->
+  <div class="dashboard" id="sportsList" style="margin-top: 100px;">
+    <!-- Cards added by dashboard.js -->
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,611 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === Login Page Styling === */
+body.login-page {
+  background: #00adb5;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.auth-container h2 {
+  margin-bottom: 1rem;
+  color: black;
+}
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.form-group label {
+  font-weight: bold;
+  font-size: 14px;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #00adb5;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background: #007c80;
+}
+.form-toggle {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+}
+.social-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.social-buttons button {
+  flex: 1;
+  background: #eeeeee;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: bold;
+}
+.google-button {
+  background: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.google-button:hover {
+  background: #007c80;
+  border-color: #aaa;
+}
+
+/* === Global Styling === */
+body:not(.login-page) {
+  background: #f2f2f2;
+  color: #333;
+}
+
+/* === Header === */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #00adb5;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.header h1 {
+  font-size: 1.5rem;
+}
+.header .nav-buttons button {
+  background: white;
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+.header .nav-buttons button:hover {
+  color: #00adb5;
+}
+
+/* === Dashboard Grid === */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-top: 6rem;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.card h3 {
+  color: #243b55;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  margin: 0.3rem 0;
+  font-size: 14px;
+}
+.card button {
+  margin-top: 1rem;
+  background: #00adb5;
+  color: black;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.card button:hover {
+  background: #007b80;
+}
+
+/* === Admin Panel Styling === */
+.admin-tabs {
+  margin-top: 6rem;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.admin-tabs .tab-btn {
+  background: #eeeeee;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #243b55;
+}
+.admin-tabs .tab-btn.active,
+.admin-tabs .tab-btn:hover {
+  background: #00adb5;
+  color: white;
+  border-color: #00adb5;
+}
+.admin-content {
+  padding: 2rem;
+}
+.admin-tab {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.admin-tab.active {
+  display: block;
+}
+
+/* === Forms and Lists === */
+#addSportForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#addSportForm input,
+#addSportForm textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+#addSportForm button {
+  width: fit-content;
+  padding: 10px 20px;
+  background: #00adb5;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#addSportForm button:hover {
+  background: #007c80;
+}
+#sportsList,
+#participantsList,
+#applicationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.preview-btn {
+  background: #444;
+  margin-left: 10px;
+}
+.preview-btn:hover {
+  background: #222;
+}
+
+/* === Modal === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+.modal-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.modal-box h3 {
+  margin-bottom: 1rem;
+  color: #243b55;
+  font-size: 20px;
+  text-align: center;
+}
+.modal-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.modal-box textarea {
+  height: 100px;
+  resize: none;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.modal-buttons button {
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #00adb5;
+  color: white;
+  transition: 0.3s ease;
+}
+.modal-buttons button:hover {
+  background: #007c80;
+}
+
+/* === Chat Layout === */
+.members-chat-container {
+  display: flex;
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+  overflow: hidden;
+}
+.members-list {
+  width: 250px;
+  background: #00adb5;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.members-list h3 {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 18px;
+}
+.member-item {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 500;
+  color: black;
+}
+.member-item:hover {
+  background-color: white;
+  color: #00adb5;
+}
+.chat-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+.chat-header {
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  background: #00adb5;
+  color: white;
+}
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+.chat-message {
+  margin: 8px;
+  padding: 10px 14px;
+  max-width: 70%;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+.chat-message.sent {
+  align-self: flex-end;
+  background-color: #00adb5;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+.chat-message.received {
+  align-self: flex-start;
+  background-color: #eeeeee;
+  color: #222;
+  border-bottom-left-radius: 0;
+}
+.chat-form {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+.chat-form input[type="text"] {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+}
+.chat-form button {
+  width: 100px;
+  height: 50px;
+  background: #00adb5;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.chat-form button:hover {
+  background: #007c80;
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-buttons {
+    margin-top: 0.5rem;
+  }
+  .dashboard {
+    padding: 1rem;
+  }
+  .members-chat-container {
+    flex-direction: column;
+  }
+  .members-list {
+    width: 100%;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .chat-box {
+    height: calc(100vh - 200px - 5rem);
+  }
+}
+
+/* === Sport Details Page Styling === */
+.sport-details-container {
+  margin-top: 6rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sport-info {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.sport-info h2 {
+  color: #243b55;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.sport-info p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.sport-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sport-actions button {
+  padding: 10px 20px;
+  background: #00adb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sport-actions button:hover {
+  background: #007c80;
+}
+
+/* === Modal Form Styling === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-box h3 {
+  margin-bottom: 1rem;
+  color: #243b55;
+  font-size: 20px;
+  text-align: center;
+}
+
+.modal-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.modal-box input:focus,
+.modal-box textarea:focus {
+  border-color: #00adb5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 173, 181, 0.2);
+}
+
+.modal-box textarea {
+  height: 100px;
+  resize: none;
+  margin-bottom: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #00adb5;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.modal-buttons button:hover {
+  background: #007c80;
+}
+
+/* === Responsive for Sports Page === */
+@media screen and (max-width: 480px) {
+  .sport-info h2 {
+    font-size: 20px;
+  }
+  .sport-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-box {
+    padding: 1.2rem;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+}

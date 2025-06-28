@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sport Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Sports Buddy</h1>
+    <div class="nav-buttons">
+      <button id="dashboardBtn"><ion-icon name="home-outline"></ion-icon> Dashboard</button>
+    </div>
+  </header>
+
+  <main class="sport-details-container">
+    <div class="sport-info" id="sportInfo">
+      <!-- Dynamic Sport Details -->
+    </div>
+
+    <div class="sport-actions">
+      <button id="applyBtn">Apply</button>
+      <button id="previewBtn" style="display: none;">Preview</button>
+      <button id="seeMembersBtn" style="display: none;">See Members</button>
+    </div>
+  </main>
+
+  <!-- Application Form Modal -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-box">
+      <h3>Application Form</h3>
+      <form id="applicationForm">
+        <input type="text" id="applicantName" placeholder="Full Name" required />
+        <input type="email" id="applicantEmail" placeholder="Email Address" required />
+        <input type="date" id="applicantDOB" placeholder="Date of Birth" required />
+        <input type="tel" id="applicantPhone" placeholder="Phone Number" required />
+        <div class="modal-buttons">
+          <button type="submit">Submit</button>
+          <button type="button" id="closeForm">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Preview Modal -->
+  <div class="modal-overlay" id="previewModal">
+    <div class="modal-box">
+      <h3>Application Preview</h3>
+      <form>
+        <label>Name:</label>
+        <input type="text" id="previewName" readonly />
+        <label>Email:</label>
+        <input type="email" id="previewEmail" readonly />
+        <label>DOB:</label>
+        <input type="text" id="previewDOB" readonly />
+        <label>Phone No.:</label>
+        <input type="text" id="previewPhone" readonly />
+        <div class="modal-buttons">
+          <button type="button" id="closePreview">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="sports.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

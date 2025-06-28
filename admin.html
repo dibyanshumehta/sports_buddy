@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Sports Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="admin.js" defer></script>
+</head>
+<body>
+
+  <!-- === Header === -->
+  <div class="header">
+    <h1>Sports Buddy</h1>
+    <div class="nav-buttons">
+      <button id="logoutBtn"><ion-icon name="log-out-outline"></ion-icon> Logout</button>
+    </div>
+  </div>
+
+  <!-- === Admin Panel Navigation === -->
+  <div class="admin-tabs">
+    <button class="tab-btn active" data-tab="sportsSection">All Sports</button>
+    <button class="tab-btn" data-tab="participantsSection">Participants</button>
+    <button class="tab-btn" data-tab="applicationsSection">Applications</button>
+  </div>
+
+  <!-- === Admin Content Area === -->
+  <div class="admin-content">
+
+    <!-- Sports Section -->
+    <section id="sportsSection" class="admin-tab active">
+      <h2>Add New Sport Event</h2>
+      <form id="addSportForm">
+        <input type="text" id="sportName" placeholder="Sport Name" required />
+        <textarea id="sportDescription" placeholder="Description" required></textarea>
+        <input type="date" id="sportDate" required />
+        <input type="text" id="sportLocation" placeholder="Location" required />
+        <button type="submit">Add Sport</button>
+      </form>
+
+      <h2>All Sports</h2>
+      <div id="sportsList"></div>
+    </section>
+
+    <!-- Participants Section -->
+    <section id="participantsSection" class="admin-tab">
+      <h2>All Participants</h2>
+      <div id="participantsList"></div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applicationsSection" class="admin-tab">
+      <h2>All Applications</h2>
+      <div id="applicationsList"></div>
+    </section>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
